@@ -8,6 +8,6 @@ Rubyコマンドの参照先が切り替わっていない場合、下記URLを�
 
 https://qiita.com/opiyo_taku/items/3312a75d5916f6cd32b1
 
-Web Appの入り口
+Appの入り口
 
 http://localhost:3000/escape
