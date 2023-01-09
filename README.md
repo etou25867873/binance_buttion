@@ -7,3 +7,6 @@ https://zenn.dev/fuuukeee3/articles/22caeb537cf1a6
 Rubyコマンドの参照先が切り替わってない場合、下記URLを参考して下さい。
 
 https://qiita.com/opiyo_taku/items/3312a75d5916f6cd32b1
+
+Web Appの入り口
+http://localhost:3000/escape

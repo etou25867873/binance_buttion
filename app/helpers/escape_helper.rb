@@ -1,0 +1,2 @@
+module EscapeHelper
+end
