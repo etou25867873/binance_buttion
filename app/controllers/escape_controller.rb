@@ -4,7 +4,8 @@ class EscapeController < ApplicationController
     end
 
     def read
-        @balance = ENV["HOME"]
+        @api_key = ENV['BINANCE_API_KEY']
+        @secret_key = ENV['BINANCE_SECRET_KEY']
         render template: "escape/index"
     end
 

@@ -1,3 +1,4 @@
 <%= button_to 'Read Config', {controller: 'escape', action: 'read'}, {method: :get }%>
+<h2>API KEY: <%= @api_key %></h2>
+<h2>API SECRET KEY: <%= @secret_key %></h2>
 <%= button_to 'Escape', {controller: 'escape', action: 'withdraw'}, {method: :get }%>
-<h2><%= @balance %></h2>
