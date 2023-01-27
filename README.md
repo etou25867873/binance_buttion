@@ -29,6 +29,7 @@ http://localhost:3000
 
    　```
 　　　BINANCE_API_KEY="APIキー"
+
 　　　BINANCE_SECRET_KEY="秘密鍵"
    　```
 
@@ -37,6 +38,7 @@ http://localhost:3000
 
    　```
 　　　NEAR_WALLET="アドレス"
+
 　　　NEAR_NETWORK="ネットワーク"
    　```
 
