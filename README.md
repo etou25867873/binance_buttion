@@ -31,7 +31,9 @@ http://localhost:3000
       NEAR_NETWORK="ネットワーク"
       ```
       ネットワークの値は下記APIより取得できる。
-      
+      ```
+      GET /sapi/v1/capital/config/getall (HMAC SHA256)
+      ```
       https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data
       
    - APIキー、秘密鍵、アドレス、ネットワークを.envファイルに記載しない場合、「Escape」ボタンが非表示となり、引き出しができない。
