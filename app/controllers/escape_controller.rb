@@ -15,8 +15,9 @@ class EscapeController < ApplicationController
         currency = params[:currency]
         balance_info = BinanceApi.fetch_balances.select { |b| b["asset"] == currency}[0]
         amount = balance_info["free"].to_d.truncate(8)
-        withdraw_wallet = balance_info["withdraw_wallet"]
-        BinanceApi.withdraw(currency, amount, withdraw_wallet)
+        wallet = balance_info["wallet"]
+        network = balance_info["network"]
+        BinanceApi.withdraw(currency, amount, wallet, network)
         redirect_to controller: :escape, action: :read
     end
 end

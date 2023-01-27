@@ -14,21 +14,28 @@ class BinanceApi
             response = request_with_auth(path: path)
             result = response.dig('balances').select { |b| b["free"].to_d > 0 }.each{ |b| 
                 currency = b["asset"]
-                wallet = ENV["#{currency}_WALLET"] 
-                b["withdraw_wallet"] = if wallet.present?
+                wallet = ENV["#{currency}_WALLET"]
+                network = ENV["#{currency}_NETWORK"]
+                b["wallet"] = if wallet.present?
                                             wallet
                                         else
                                             "None"
                                         end
+                b["network"] = if network.present?
+                                    network
+                                else
+                                    "None"
+                                end            
             } if response.dig('balances').present?
             result
         end
 
-        def withdraw(currency, amount, withdraw_wallet)
+        def withdraw(currency, amount, wallet, network)
             path = '/sapi/v1/capital/withdraw/apply'
             options = {
                 coin: currency,
-                address: withdraw_wallet,
+                address: wallet,
+                network: network,
                 amount: amount,
             }
             binding.pry

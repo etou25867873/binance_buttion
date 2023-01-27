@@ -7,8 +7,8 @@
         <h2>BALANCES:</h2>
         <% @balances.each do |b| %>
             <p>
-                Currency: <%= b["asset"] %> Balance: <%= b["free"] %> Withdraw Wallet: <%= b["withdraw_wallet"] %> 
-                <% if b["withdraw_wallet"] != "None" %>
+                Currency: <%= b["asset"] %> Balance: <%= b["free"] %> Withdraw Wallet: <%= b["wallet"] %> Network: <%= b["network"] %> 
+                <% if b["wallet"] != "None" || b["network"] != "None" %>
                     <%= button_to 'Escape', {controller: 'escape', action: 'withdraw'}, {method: :get , params: {currency: b["asset"]}}%>
                 <% end %>
             </p>
