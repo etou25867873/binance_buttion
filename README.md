@@ -26,10 +26,10 @@ http://localhost:3000
 3. .envファイル作成
    - ルートディレクトリに.envファイルを作成
    - Step 1で登録したAPIキーと秘密鍵を以下のように.envファイルに記載
-```
-BINANCE_API_KEY="APIキー"
-BINANCE_SECRET_KEY="秘密鍵"
-```
+      ```
+      BINANCE_API_KEY="APIキー"
+      BINANCE_SECRET_KEY="秘密鍵"
+      ```
    - Step 2で登録したアドレスとそのアドレスが属するネットワークを以下のように通貨毎に.envファイルに記載
    　キーのプリフィックスはTickerの大文字
 ```
