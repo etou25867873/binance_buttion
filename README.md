@@ -8,16 +8,16 @@ Rubyコマンドの参照先が切り替わっていない場合、下記URLを�
 
 https://qiita.com/opiyo_taku/items/3312a75d5916f6cd32b1
 
-Appの入り口
+## Appの入り口
 
 http://localhost:3000
 
-操作方法
+## 操作方法
 1. 「Read Configuration & System Status & Balance」ボタンを押して、APIキー、秘密鍵、通貨別のアドレス、通貨別のネットワークを表示
 2. 「Escape」ボタンを押して、該当する通貨の残高を引き出す
 
 
-事前準備
+## 事前準備
 1. BinanceでAPIを登録
    - HMAC認証のAPIを登録
    - 引き出し権限をAPIに付与するため、Appを実行するPublic IPをAPIのIP制限を追加
