@@ -30,12 +30,11 @@ http://localhost:3000
       BINANCE_API_KEY="APIキー"
       BINANCE_SECRET_KEY="秘密鍵"
       ```
-   - Step 2で登録したアドレスとそのアドレスが属するネットワークを以下のように通貨毎に.envファイルに記載
-   　キーのプリフィックスはTickerの大文字
-```
-NEAR_WALLET="アドレス"
-NEAR_NETWORK="ネットワーク"
-```
+   - Step 2で登録したアドレスとそのアドレスが属するネットワークを以下のように通貨毎に.envファイルに記載　※キーのプリフィックスはTickerの大文字
+      ```
+      NEAR_WALLET="アドレス"
+      NEAR_NETWORK="ネットワーク"
+      ```
    - APIキー、秘密鍵、アドレス、ネットワークを登録しない場合、「Escape」ボタンが非表示となり、引き出しができない
 
 
