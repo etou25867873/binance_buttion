@@ -16,8 +16,14 @@ class BinanceApi
             result
         end
 
-        def withdraw
+        def withdraw(currency, amount)
             path = '/sapi/v1/capital/withdraw/apply'
+            options = {
+                coin: currency,
+                address: ENV["#{currency}_WALLET"],
+                amount: amount,
+            }
+            request_with_auth(path: path, options: options, method: 'POST')
         end
 
         private

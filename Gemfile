@@ -71,7 +71,8 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'pry-rails'
+gem 'pry'
+gem 'pry-byebug'
 
 gem 'dotenv-rails'
 
