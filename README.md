@@ -17,7 +17,7 @@ http://localhost:3000
 1. BinanceでAPIを登録。
    - HMAC認証のAPIを登録。
    - 引き出し権限をAPIに付与するため、Appを実行するPublic IPをAPIのIP制限を追加。
-2. 通貨毎に引き出し先のアドレスをBinanceのホワイトリストに追加。
+2. 通貨毎に引き出し先のアドレスをBinanceのホワイトリストに登録。
 3. .envファイル作成
    - ルートディレクトリに.envファイルを作成
    - Step 1で登録したAPIキーと秘密鍵を以下のように.envファイルに記載。
