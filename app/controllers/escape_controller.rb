@@ -12,6 +12,7 @@ class EscapeController < ApplicationController
     end
 
     def withdraw
-        render template: "escape/index"
+        currency = params[:currency]
+        redirect_to controller: :escape, action: :read
     end
 end

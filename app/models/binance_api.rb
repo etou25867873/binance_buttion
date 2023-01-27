@@ -16,6 +16,10 @@ class BinanceApi
             result
         end
 
+        def withdraw
+            path = '/sapi/v1/capital/withdraw/apply'
+        end
+
         private
             def get(path)
                 url = DOMAIN + path
@@ -40,11 +44,16 @@ class BinanceApi
                     c.request :url_encoded
                     c.adapter Faraday.default_adapter
                 end
+                if method.to_s.upcase == 'GET' || path.to_s.include?("wapi")
+                    url = url + "?" + build_binance_query_with_signature(options)
+                    options = {}
+                end
 
                 case method.to_s.upcase
                 when 'GET'
-                    url = url + "?" + build_binance_query_with_signature(options)
                     response = conn.get(url)
+                when 'POST'
+                    response = conn.post(url, options)
                 end
 
                 result = JSON.parse(response&.body)
