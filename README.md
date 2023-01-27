@@ -26,6 +26,7 @@ http://localhost:3000
       BINANCE_SECRET_KEY="秘密鍵"
       ```
    - Step 2で登録したアドレスとそのアドレスが属するネットワークを以下のように通貨毎に.envファイルに記載。キーのプリフィックスはTickerの大文字。
+　　　　　　　　　　※ネットワークの値はhttps://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data　より取得できる。
       ```
       NEAR_WALLET="アドレス"
       NEAR_NETWORK="ネットワーク"
