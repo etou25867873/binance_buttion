@@ -12,17 +12,26 @@ class BinanceApi
         def fetch_balances
             path = '/api/v3/account'
             response = request_with_auth(path: path)
-            result = response.dig('balances').select { |b| b["free"].to_d > 0 } if response.dig('balances').present?
+            result = response.dig('balances').select { |b| b["free"].to_d > 0 }.each{ |b| 
+                currency = b["asset"]
+                wallet = ENV["#{currency}_WALLET"] 
+                b["withdraw_wallet"] = if wallet.present?
+                                            wallet
+                                        else
+                                            "None"
+                                        end
+            } if response.dig('balances').present?
             result
         end
 
-        def withdraw(currency, amount)
+        def withdraw(currency, amount, withdraw_wallet)
             path = '/sapi/v1/capital/withdraw/apply'
             options = {
                 coin: currency,
-                address: ENV["#{currency}_WALLET"],
+                address: withdraw_wallet,
                 amount: amount,
             }
+            binding.pry
             request_with_auth(path: path, options: options, method: 'POST')
         end
 
@@ -61,7 +70,7 @@ class BinanceApi
                 when 'POST'
                     response = conn.post(url, options)
                 end
-
+                
                 result = JSON.parse(response&.body)
 
                 if response.status.to_i != 200
