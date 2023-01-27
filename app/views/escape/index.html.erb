@@ -3,6 +3,14 @@
     <h2>API KEY: <%= @api_key %></h2>
     <h2>API SECRET KEY: <%= @secret_key %></h2>
     <h2>SYSTEM STATUS: <%= @system_status %></h2>
+    <% if @balances %>
+        <h2>BALANCES:</h2>
+        <% @balances.each do |b| %>
+            <p>
+                Currency: <%= b[0] %> Balance: <%= b[1] %>
+            </p>
+        <% end %>
+    <% end %>
     <% if @system_status == "normal" %>
         <%= button_to 'Escape', {controller: 'escape', action: 'withdraw'}, {method: :get }%>
     <% end %>
