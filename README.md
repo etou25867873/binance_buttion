@@ -30,7 +30,12 @@ http://localhost:3000
       NEAR_WALLET="アドレス"
       NEAR_NETWORK="ネットワーク"
       ```
-      ネットワークの値は下記APIより取得できる。
+      ネットワークの値の取得
+      方法1:
+      Address Management画面のNetworkの列より取得できる。
+      https://www.binance.com/en/my/security/address-management
+      方法2:
+      下記APIより取得できる。
       ```
       GET /sapi/v1/capital/config/getall (HMAC SHA256)
       ```
