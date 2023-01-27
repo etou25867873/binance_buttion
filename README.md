@@ -33,5 +33,5 @@ http://localhost:3000
    - APIキー、秘密鍵、アドレス、ネットワークを.envファイルに記載しない場合、「Escape」ボタンが非表示となり、引き出しができない。
 
 ## 操作方法
-1. 「Read Configuration & System Status & Balance」ボタンを押して、APIキー、秘密鍵、通貨別のアドレス、通貨別のネットワークを表示。
+1. 「Read Configuration & System Status & Balance」ボタンを押して、APIキー、秘密鍵、通貨別のアドレスとネットワークを表示。
 2. 「Escape」ボタンを押して、該当する通貨の残高を引き出す。
