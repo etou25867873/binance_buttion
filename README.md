@@ -5,7 +5,7 @@ rubyインストール時に、「cannot load such file -- psych」エラーが�
 
 https://zenn.dev/fuuukeee3/articles/22caeb537cf1a6
 
-rubyコマンドの参照先が切り替わっていない場合、下記URLを参考して下さい。
+rubyコマンドの参照先が切り替わらない場合、下記URLを参考して下さい。
 
 https://qiita.com/opiyo_taku/items/3312a75d5916f6cd32b1
 
