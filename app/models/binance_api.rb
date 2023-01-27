@@ -12,7 +12,7 @@ class BinanceApi
         def fetch_balances
             path = '/api/v3/account'
             response = request_with_auth(path: path)
-            result = response.dig('balances').select { |b| b["free"].to_d > 0 }.map { |b| [b["asset"], b["free"]] }.to_h if response.dig('balances').present?
+            result = response.dig('balances').select { |b| b["free"].to_d > 0 } if response.dig('balances').present?
             result
         end
 

@@ -7,7 +7,7 @@
         <h2>BALANCES:</h2>
         <% @balances.each do |b| %>
             <p>
-                Currency: <%= b[0] %> Balance: <%= b[1] %> <%= button_to 'Escape', {controller: 'escape', action: 'withdraw'}, {method: :get , params: {currency: b[0]}}%>
+                Currency: <%= b["asset"] %> Balance: <%= b["free"] %> <%= button_to 'Escape', {controller: 'escape', action: 'withdraw'}, {method: :get , params: {currency: b["asset"]}}%>
             </p>
         <% end %>
     <% end %>
