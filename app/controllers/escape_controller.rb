@@ -14,7 +14,13 @@ class EscapeController < ApplicationController
     def withdraw
         currency = params[:currency]
         balance_info = BinanceApi.fetch_balances.select { |b| b["asset"] == currency}[0]
-        amount = balance_info["free"].to_d.truncate(8)
+        case currency
+        when "GLMR"
+            amount = balance_info["free"].to_d.truncate(5)
+        else
+            amount = balance_info["free"].to_d.truncate(8)
+        end
+        
         wallet = balance_info["wallet"]
         network = balance_info["network"]
         BinanceApi.withdraw(currency, amount, wallet, network)
