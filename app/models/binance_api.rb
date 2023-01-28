@@ -41,6 +41,19 @@ class BinanceApi
             request_with_auth(path: path, options: options, method: 'POST')
         end
 
+        def withdrawable_amount(currency, amount)
+            path = '/sapi/v1/capital/config/getall'
+            response = request_with_auth(path: path)
+            network = ENV["#{currency}_NETWORK"]
+            network_info = response.select { |c| c["coin"] == currency }.dig(0, "networkList").select { |n| n["network"] == network }
+            withdraw_integer_multiple = network_info.dig(0, "withdrawIntegerMultiple")
+            withdraw_min = network_info.dig(0, "withdrawMin")
+            truncate_length = withdraw_integer_multiple.split(".")[1].length
+            amount = amount.truncate(truncate_length)
+            raise "Currency: #{currency} Balance: #{amount} is less than withdraw min"if amount < withdraw_min.to_d
+            amount
+        end
+
         private
             def get(path)
                 url = DOMAIN + path
