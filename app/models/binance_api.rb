@@ -38,7 +38,6 @@ class BinanceApi
                 network: network,
                 amount: amount,
             }
-            binding.pry
             request_with_auth(path: path, options: options, method: 'POST')
         end
 
