@@ -38,19 +38,18 @@ http://localhost:3000
       https://www.binance.com/en/my/security/address-management
       
       方法2:
-      下記APIより取得できる。
-      ```
-      GET /sapi/v1/capital/config/getall (HMAC SHA256)
-      ```
-      API Document: https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data
+      [All Coins' Information API](#all-coins-information-user_data)より取得できる。
    - APIキー、秘密鍵、アドレス、ネットワークを.envファイルに記載しない場合、「Escape」ボタンが非表示となり、引き出しができない。
 
 ## 操作方法
 1. 「Read Configuration & System Status & Balance」ボタンを押して、APIキー、秘密鍵、通貨別のアドレスとネットワークを表示。
 2. 「Escape」ボタンを押して、該当する通貨の残高を引き出す。
 3. 通貨のwithdrawIntegerMultipleによって引き出し金額の端数を切り捨て。引き出し最小金額withdrawMinより少ない場合、エラーになる。
-   withdrawIntegerMultiple、withdrawMinについては以下のAPIにご参照ください。
-   ```
-   GET /sapi/v1/capital/config/getall (HMAC SHA256)
-   ```
-   API Document: https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data
+   withdrawIntegerMultiple、withdrawMinについては[All Coins' Information API](#all-coins-information-user_data)にご参照ください。
+
+   
+## All Coins' Information (USER_DATA)
+```
+GET /sapi/v1/capital/config/getall (HMAC SHA256)
+```
+API Document: https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data
