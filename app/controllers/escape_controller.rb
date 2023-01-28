@@ -4,7 +4,7 @@ class EscapeController < ApplicationController
         render template: "escape/index"
     end
 
-    def read
+    def show
         @api_key = ENV['BINANCE_API_KEY']
         @secret_key = ENV['BINANCE_SECRET_KEY']
         @system_status = BinanceApi.fetch_system_status["msg"]
@@ -20,7 +20,7 @@ class EscapeController < ApplicationController
             wallet = balance_info["wallet"]
             network = balance_info["network"]
             BinanceApi.withdraw(currency, amount, wallet, network)
-            redirect_to controller: :escape, action: :read
+            redirect_to controller: :escape, action: :show
         rescue => e
             redirect_to controller: :escape, action: :index, error: e.to_s
         end
