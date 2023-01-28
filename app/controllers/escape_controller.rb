@@ -6,7 +6,6 @@ class EscapeController < ApplicationController
 
     def show
         @api_key = ENV['BINANCE_API_KEY']
-        @secret_key = ENV['BINANCE_SECRET_KEY']
         @system_status = BinanceApi.fetch_system_status["msg"]
         @balances = BinanceApi.fetch_balances
         render template: "escape/index"
