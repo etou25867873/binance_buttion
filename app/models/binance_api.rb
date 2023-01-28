@@ -14,18 +14,20 @@ class BinanceApi
             response = request_with_auth(path: path)
             result = response.dig('balances').select { |b| b["free"].to_d > 0 }.each{ |b| 
                 currency = b["asset"]
-                wallet = ENV["#{currency}_WALLET"]
-                network = ENV["#{currency}_NETWORK"]
-                b["wallet"] = if wallet.present?
-                                            wallet
-                                        else
-                                            "None"
-                                        end
-                b["network"] = if network.present?
-                                    network
-                                else
-                                    "None"
-                                end            
+                if !currency.start_with?("LD")
+                    wallet = ENV["#{currency}_WALLET"]
+                    network = ENV["#{currency}_NETWORK"]
+                    b["wallet"] = if wallet.present?
+                                                wallet
+                                            else
+                                                "None"
+                                            end
+                    b["network"] = if network.present?
+                                        network
+                                    else
+                                        "None"
+                                    end
+                end          
             } if response.dig('balances').present?
             result
         end
