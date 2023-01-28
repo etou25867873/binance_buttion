@@ -50,7 +50,7 @@ class BinanceApi
             withdraw_min = network_info.dig(0, "withdrawMin")
             truncate_length = withdraw_integer_multiple.split(".")[1].length
             amount = amount.truncate(truncate_length)
-            raise "Currency: #{currency} Balance: #{amount} is less than withdraw min" if amount < withdraw_min.to_d
+            raise "#{currency} balance: #{amount} #{currency} is less than withdraw min: #{withdraw_min} #{currency}" if amount < withdraw_min.to_d
             amount
         end
 
