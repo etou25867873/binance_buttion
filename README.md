@@ -49,6 +49,7 @@ http://localhost:3000
 1. 「Read Configuration & System Status & Balance」ボタンを押して、APIキー、秘密鍵、通貨別のアドレスとネットワークを表示。
 2. 「Escape」ボタンを押して、該当する通貨の残高を引き出す。
 3. 通貨のwithdrawIntegerMultipleによって引き出し金額の端数を切り捨て。引き出し最小金額withdrawMinより少ない場合、エラーになる。
+   withdrawIntegerMultiple、withdrawMinは以下のAPIに参照。
    ```
    GET /sapi/v1/capital/config/getall (HMAC SHA256)
    ```
