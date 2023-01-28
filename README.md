@@ -1,11 +1,11 @@
 ## 環境構築
 rubyバージョン:3.2.0
 
-rubyインストール時に、「cannot load such file -- psych」エラーが発生した場合、下記URLを参考して下さい。
+rubyインストール時に、「cannot load such file -- psych」エラーが発生した場合、下記URLをご参考ください。
 
 https://zenn.dev/fuuukeee3/articles/22caeb537cf1a6
 
-rubyコマンドの参照先が切り替わらない場合、下記URLを参考して下さい。
+rubyコマンドの参照先が切り替わらない場合、下記URLをご参考ください。
 
 https://qiita.com/opiyo_taku/items/3312a75d5916f6cd32b1
 
@@ -49,7 +49,7 @@ http://localhost:3000
 1. 「Read Configuration & System Status & Balance」ボタンを押して、APIキー、秘密鍵、通貨別のアドレスとネットワークを表示。
 2. 「Escape」ボタンを押して、該当する通貨の残高を引き出す。
 3. 通貨のwithdrawIntegerMultipleによって引き出し金額の端数を切り捨て。引き出し最小金額withdrawMinより少ない場合、エラーになる。
-   withdrawIntegerMultiple、withdrawMinは以下のAPIに参照。
+   withdrawIntegerMultiple、withdrawMinについては以下のAPIにご参照ください。
    ```
    GET /sapi/v1/capital/config/getall (HMAC SHA256)
    ```
