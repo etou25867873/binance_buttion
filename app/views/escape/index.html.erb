@@ -11,7 +11,7 @@
         <% @balances.each do |b| %>
             <p>
                 Currency: <%= b["asset"] %> Balance: <%= b["free"] %> Withdraw Wallet: <%= b["wallet"] %> Network: <%= b["network"] %> 
-                <% if b["wallet"] != "None" || b["network"] != "None" %>
+                <% if b["wallet"] != "None" && b["network"] != "None" && !b["asset"].start_with?("LD")%>
                     <%= button_to 'Escape', {controller: 'escape', action: 'withdraw'}, {method: :get , params: {currency: b["asset"]}}%>
                 <% end %>
             </p>
